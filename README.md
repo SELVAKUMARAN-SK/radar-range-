@@ -16,8 +16,27 @@ The Radar Range Equation is a fundamental formula used in radar system design to
 6.	Execute the Program: Run the Python script to calculate and display the maximum range of the radar.
 
 # Code:
+Pt = 1000;
+G = 1000;
+sigma = 1;
+Ae = 10;
 
+Smin = logspace(-12, -6, 100);
+Rmax = ((Pt * G * sigma * Ae) ./ (16 * %pi^2 .* Smin)).^(1/4);
+subplot(3,1,1);
+plot(Smin, Rmax);
+
+Ppeak = linspace(100, 10000, 100);
+Rmax2 = ((Ppeak * G * sigma * Ae) ./ (16 * %pi^2 * 1e-10)).^(1/4);
+subplot(3,1,2);
+plot(Ppeak, Rmax2);
+
+Gt = linspace(100, 2000, 100);
+Rmax3 = ((Pt * Gt * sigma * Ae) ./ (16 * %pi^2 * 1e-10)).^(1/4);
+subplot(3,1,3);
+plot(Gt, Rmax3);
 # Output:
+![WhatsApp Image 2025-11-20 at 20 19 15_8de936e3](https://github.com/user-attachments/assets/0be88c41-7c15-4a37-ac65-a705c0d25e79)
 
 # Tabulation:
 
